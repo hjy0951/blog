@@ -2,6 +2,7 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
+import { Items } from "@/types";
 
 const postsDirectory = join(process.cwd(), "/contents");
 
@@ -26,10 +27,6 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const fullPath = join(postsDirectory, `${realSlug}/content.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
-
-  type Items = {
-    [key: string]: string;
-  };
 
   const items: Items = {};
 
@@ -56,6 +53,6 @@ export function getAllPosts(fields: string[] = []) {
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+    .sort((post1, post2) => (post1.createdAt > post2.createdAt ? -1 : 1));
   return posts;
 }

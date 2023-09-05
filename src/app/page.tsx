@@ -1,14 +1,22 @@
 import { Body } from "@/components/Body";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { getAllPosts } from "@/util/api";
+import { getAllPosts, getPostTags } from "@/util/api";
 
 export default function Home() {
-  const posts = getAllPosts();
+  const tags = getPostTags();
+  const posts = getAllPosts([
+    "slug",
+    "title",
+    "description",
+    "thubnail",
+    "tags",
+    "createdAt",
+  ]);
   return (
     <>
       <Header />
-      <Body />
+      <Body tags={tags} allPosts={posts} />
       <Footer />
     </>
   );
