@@ -7,7 +7,6 @@ const postsDirectory = join(process.cwd(), "/contents");
 
 export function getPostTags() {
   const ret = fs.readdirSync(postsDirectory);
-  console.log(ret);
   return ret;
 }
 
@@ -52,10 +51,8 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
 }
 
 export function getAllPosts(fields: string[] = []) {
-  console.log("asdasdad");
   const tags = getPostTags();
   const slugs = getPostSlugs(tags);
-  console.log(slugs);
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order

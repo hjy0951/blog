@@ -1,7 +1,5 @@
 "use client";
 
-import { getAllPosts } from "@/util/api";
-
 export const Body = () => {
   return (
     <main>
