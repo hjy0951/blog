@@ -9,7 +9,7 @@ export default function Home() {
     "slug",
     "title",
     "description",
-    "thubnail",
+    "thumbnail",
     "tags",
     "createdAt",
   ]);
