@@ -16,16 +16,22 @@ export const PostCard = ({
   createdAt,
 }: Props) => {
   return (
-    <article className="rounded-md border border-solid">
-      <p>{createdAt}</p>
-      <Image
-        src={`/contents/${tags[0]}/${slug}/cover.png`}
-        width={450}
-        height={400}
-        alt={slug + " thumbnail"}
-      />
-      <p>{title}</p>
-      <p>{description}</p>
+    <article className="rounded-md border border-solid shadow-lg">
+      <div className="flex flex-col gap-2 m-6">
+        <Image
+          className="rounded-md"
+          src={`/contents/${tags[0]}/${slug}/cover.png`}
+          width={400}
+          height={350}
+          alt={slug + " thumbnail"}
+        />
+        <div className="flex flex-col items-end">
+          <p>{title}</p>
+          <p>{createdAt}</p>
+        </div>
+
+        {/* <p>{description}</p> */}
+      </div>
     </article>
   );
 };
