@@ -1,31 +1,10 @@
-"use client";
-
-import React from "react";
-import styled from "@emotion/styled";
-
-const HeaderLayout = styled.header`
-  top: 0px;
-  width: 100%;
-  height: 4rem;
-  position: sticky;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Buttons = styled.div`
-  width: 30%;
-  display: flex;
-  justify-content: space-evenly;
-`;
-
 export const Header = () => {
   return (
-    <HeaderLayout>
-      <a href="/">
+    <header className="sticky top-0 w-full h-16 flex justify-between items-center">
+      <a href="/" className="w-20">
         <p>Heojoooon</p>
       </a>
-      <Buttons>
+      <div className="flex w-1/3 justify-evenly">
         <a href="https://github.com/hjy0951">
           <p>GitHub</p>
         </a>
@@ -36,7 +15,7 @@ export const Header = () => {
           <p>instagram</p>
         </a>
         <button>Mode</button>
-      </Buttons>
-    </HeaderLayout>
+      </div>
+    </header>
   );
 };
