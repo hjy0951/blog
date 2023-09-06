@@ -9,7 +9,7 @@ export const Tags = ({ tagData }: Props) => {
   const tagList = [["All", totalPostCount]].concat(tagData);
   const createTag = (data: (string | number)[], idx: number) => {
     return (
-      <div key={idx} className="flex hover:font-bold">
+      <div key={idx} className="flex hover:underline">
         <h3>{data[0]}</h3>
         <p>{"(" + data[1] + ")"}</p>
       </div>
