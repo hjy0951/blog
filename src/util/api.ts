@@ -11,6 +11,16 @@ export function getPostTags() {
   return ret;
 }
 
+export function getPostTagsAndEachCount() {
+  const ret: [string, number][] = [];
+  const tags = getPostTags();
+  tags.forEach((tag) => {
+    const count = fs.readdirSync(join(postsDirectory, `/${tag}`)).length;
+    ret.push([tag, count]);
+  });
+  return ret;
+}
+
 export function getPostSlugs(tags: string[]) {
   let totalSlugs: string[] = [];
   tags.forEach((tag) => {

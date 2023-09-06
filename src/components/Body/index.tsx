@@ -1,17 +1,18 @@
 "use client";
 
 import { Items } from "@/types";
+import { Tags } from "./TagList";
 
 interface Props {
-  tags: string[];
+  tagData: [string, number][];
   allPosts: Items[];
 }
 
-export const Body = ({ tags, allPosts }: Props) => {
+export const Body = ({ tagData, allPosts }: Props) => {
   console.log(allPosts);
   return (
     <main>
-      <div>{tags}</div>
+      <Tags tagData={tagData} />
       {allPosts.map((post, idx) => (
         <div key={idx}>{post.slug}</div>
       ))}
