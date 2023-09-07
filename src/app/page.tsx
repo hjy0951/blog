@@ -14,10 +14,10 @@ export default function Home() {
     "createdAt",
   ]);
   return (
-    <>
+    <div className="flex flex-col gap-8">
       <Header />
       <Body tagData={tagData} allPosts={posts} />
       <Footer />
-    </>
+    </div>
   );
 }
