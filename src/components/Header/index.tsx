@@ -14,7 +14,7 @@ export const Header = () => {
         <a href="https://github.com/hjy0951">
           {/* <p>GitHub</p> */}
           <svg
-            className="fill-gray-800 hover:fill-violet-950"
+            className="fill-gray-800 hover:fill-violet-950 hover:animate-bounce"
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"
@@ -25,7 +25,7 @@ export const Header = () => {
         </a>
         <a href="https://www.linkedin.com/in/%EC%A4%80%EC%98%81-%ED%97%88-159288250/">
           <svg
-            className="fill-gray-800 hover:fill-blue-800"
+            className="fill-gray-800 hover:fill-blue-800 hover:animate-bounce"
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"
@@ -36,7 +36,7 @@ export const Header = () => {
         </a>
         <a href="https://www.instagram.com/heojoooon/">
           <svg
-            className="fill-gray-800 hover:fill-pink-600"
+            className="fill-gray-800 hover:fill-pink-600 hover:animate-bounce"
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"
