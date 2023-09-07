@@ -16,13 +16,14 @@ export const PostCard = ({
   createdAt,
 }: Props) => {
   return (
-    <article className="rounded-md border border-solid shadow-lg">
-      <div className="flex flex-col gap-2 m-6">
+    <article className="pt-4 pb-4 rounded-md border border-solid shadow-lg">
+      <div className="flex flex-col gap-6 m-6">
+        <div className="absolute w-108 h-72 overflow-hidden bg-[hsl(0,0%,10%,0.4)] bg-fixed opacity-0 transition hover:opacity-100"></div>
         <Image
           className="rounded-md"
           src={`/contents/${tags[0]}/${slug}/cover.png`}
-          width={400}
-          height={350}
+          width={432}
+          height={288}
           alt={slug + " thumbnail"}
         />
         <div className="flex flex-col items-end">
