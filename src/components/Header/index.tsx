@@ -1,6 +1,6 @@
 export const Header = () => {
   return (
-    <header className="sticky top-0 w-full h-20 flex justify-evenly items-center">
+    <header className="sticky top-0 w-full h-20 border-b flex justify-evenly items-center shadow">
       <div className="w-32">
         <a href="/">
           <p>Heojoooon.</p>
