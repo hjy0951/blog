@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface Props {
   slug: string;
@@ -17,7 +17,9 @@ export const PostCard = ({
   createdAt,
 }: Props) => {
   const [isHover, setIsHover] = useState<boolean>(false);
-  const cardCSS = `
+  const [cardCSS, setCardCSS] = useState<string>("");
+  useEffect(() => {
+    setCardCSS(`
     .card-${slug} {
       display: inline-grid;
       transition: transform 0.3s;
@@ -33,7 +35,8 @@ export const PostCard = ({
     .card-back-${slug} {
       transform: rotateY(180deg);
     }
-  `;
+  `);
+  }, [isHover, slug]);
   return (
     <a
       href="/"
