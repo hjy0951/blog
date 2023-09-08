@@ -26,7 +26,7 @@ export const PostCard = ({
       <article className="pt-4 pb-4 rounded-md border border-solid shadow-lg">
         <div className="flex flex-col gap-6 m-6">
           <div
-            className="absolute w-108 h-72 rounded-md shadow overflow-hidden bg-[hsl(0,0%,10%,0.4)] bg-fixed transition
+            className="absolute w-108 h-72 rounded-md shadow overflow-hidden bg-[hsl(0,0%,10%,0.8)] bg-fixed transition
             opacity-0 hover:opacity-100
             "
             style={{ opacity: isHover ? 1 : 0 }}
