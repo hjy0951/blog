@@ -2,7 +2,7 @@ export const Header = () => {
   return (
     <header className="sticky top-0 w-full h-20 border-b flex justify-evenly items-center shadow">
       <div className="w-32">
-        <a href="/">
+        <a href="/" className="hover:underline">
           <p>Heojoooon.</p>
         </a>
         {/* <div className="flex justify-end">
