@@ -44,18 +44,8 @@ export const PostCard = ({
             <p>{title}</p>
             <p>{createdAt}</p>
           </div>
-
-          {/* <p>{description}</p> */}
         </div>
       </article>
     </a>
   );
 };
-/*
-"slug",
-"title",
-"description",
-"thubnail",
-"tags",
-"createdAt",
-*/
