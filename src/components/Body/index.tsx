@@ -1,5 +1,3 @@
-"use client";
-
 import { Items } from "@/types";
 import { Tags } from "./TagList";
 import { PostCard } from "./PostCard";
