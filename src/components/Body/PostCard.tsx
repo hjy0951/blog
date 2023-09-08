@@ -17,35 +17,62 @@ export const PostCard = ({
   createdAt,
 }: Props) => {
   const [isHover, setIsHover] = useState<boolean>(false);
+  const cardCSS = `
+    .card-${slug} {
+      display: inline-grid;
+      transition: transform 0.3s;
+      transform: perspective(2000px) rotateY(${isHover ? 180 : 0}deg);
+      transform-style: preserve-3d;
+    }
+
+    .card-${slug} > * {
+      grid-area: 1 / 1 / 1 / 1;
+      backface-visibility: hidden;
+    }
+
+    .card-back-${slug} {
+      transform: rotateY(180deg);
+    }
+  `;
   return (
     <a
       href="/"
       onMouseOver={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      <article className="pt-4 pb-4 rounded-md border border-solid shadow-lg">
-        <div className="flex flex-col gap-6 m-6">
-          <div
-            className="absolute w-108 h-72 rounded-md shadow overflow-hidden bg-[hsl(0,0%,10%,0.8)] bg-fixed transition
-            opacity-0 hover:opacity-100
-            "
-            style={{ opacity: isHover ? 1 : 0 }}
-          >
-            <p className="text-white">{description}</p>
+      <div className={`card-${slug}`}>
+        <style>{cardCSS}</style>
+        {/* 앞면 */}
+        <article
+          className={`card-front-${slug} pt-4 pb-4 rounded-md border border-solid shadow-lg`}
+        >
+          <div className="flex flex-col gap-6 m-6">
+            <Image
+              className="rounded-md"
+              src={`/contents/${tags[0]}/${slug}/cover.png`}
+              width={432}
+              height={288}
+              alt={slug + " thumbnail"}
+            />
+            <div className="flex flex-col items-end">
+              <p>{title}</p>
+              <p>{createdAt}</p>
+            </div>
           </div>
-          <Image
-            className="rounded-md"
-            src={`/contents/${tags[0]}/${slug}/cover.png`}
-            width={432}
-            height={288}
-            alt={slug + " thumbnail"}
-          />
-          <div className="flex flex-col items-end">
-            <p>{title}</p>
-            <p>{createdAt}</p>
+        </article>
+        {/* 뒷면 */}
+        <article
+          className={`card-back-${slug} pt-4 pb-4 rounded-md border border-solid shadow-lg`}
+        >
+          <div className="flex flex-col gap-6 m-6">
+            <div className="w-108 h-72 rounded-md shadow overflow-hidden bg-[hsl(0,0%,10%,0.8)] bg-fixed transition"></div>
+            <div className="flex flex-col items-start">
+              <p>{tags}</p>
+              <p>{description}</p>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </a>
   );
 };
