@@ -58,6 +58,7 @@ export const PostCard = ({
               width={432}
               height={288}
               alt={slug + " thumbnail"}
+              priority
             />
             <div className="flex flex-col items-end">
               <p>{title}</p>
