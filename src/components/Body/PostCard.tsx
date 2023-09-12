@@ -60,7 +60,7 @@ export const PostCard = ({
               alt={slug + " thumbnail"}
               priority
             />
-            <div className="flex flex-col items-end">
+            <div className="flex flex-col gap-2 items-end">
               <p>{title}</p>
               <p>{createdAt}</p>
             </div>
@@ -72,8 +72,10 @@ export const PostCard = ({
         >
           <div className="flex flex-col gap-6 m-6">
             <div className="w-108 h-72 rounded-md shadow overflow-hidden bg-[hsl(0,0%,10%,0.8)] bg-fixed transition"></div>
-            <div className="flex flex-col items-start">
-              <p>{tags}</p>
+            <div className="flex flex-col gap-2 items-start">
+              <p className="underline underline-offset-4 decoration-wavy decoration-red-600">
+                {tags}
+              </p>
               <p>{description}</p>
             </div>
           </div>
