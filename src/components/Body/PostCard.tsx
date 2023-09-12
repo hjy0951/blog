@@ -1,5 +1,6 @@
 "use client";
 
+import { processedTagName } from "@/utils/constants";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
@@ -73,9 +74,22 @@ export const PostCard = ({
           <div className="flex flex-col gap-6 m-6">
             <div className="w-108 h-72 rounded-md shadow overflow-hidden bg-[hsl(0,0%,10%,0.8)] bg-fixed transition"></div>
             <div className="flex flex-col gap-2 items-start">
-              <p className="underline underline-offset-4 decoration-wavy decoration-red-600">
-                {tags}
-              </p>
+              <div className="flex gap-2">
+                {tags.map((tag, idx) => {
+                  return (
+                    <p
+                      key={idx}
+                      className="underline underline-offset-4 decoration-wavy decoration-red-600"
+                    >
+                      {processedTagName[tag]}
+                      {/* {tags.map((tag) => processedTagName[tag])} */}
+                    </p>
+                  );
+                })}
+                {/* <p className="underline underline-offset-4 decoration-wavy decoration-red-600">
+                  {tags.map((tag) => processedTagName[tag])}
+                </p> */}
+              </div>
               <p>{description}</p>
             </div>
           </div>
