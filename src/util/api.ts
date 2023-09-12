@@ -26,9 +26,8 @@ export function getPostSlugs(tags: string[]) {
   tags.forEach((tag) => {
     const dirPath = join(postsDirectory, tag);
     const slugs = fs.readdirSync(dirPath).map((el) => `${tag}/${el}`);
-    totalSlugs = [...slugs];
+    totalSlugs = [...totalSlugs, ...slugs];
   });
-  // return fs.readdirSync(postsDirectory);
   return totalSlugs;
 }
 
