@@ -7,7 +7,6 @@ export default function Home() {
     "slug",
     "title",
     "description",
-    "thumbnail",
     "tags",
     "createdAt",
   ]);
