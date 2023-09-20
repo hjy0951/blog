@@ -64,7 +64,7 @@ export const PostCard = ({
 
   return (
     <a
-      href="/"
+      href={`/posts/${slug}`}
       onMouseOver={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
