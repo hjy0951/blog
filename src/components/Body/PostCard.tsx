@@ -19,8 +19,14 @@ export const PostCard = ({
   tags,
   createdAt,
 }: Props) => {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isHover, setIsHover] = useState<boolean>(false);
   const [cardCSS, setCardCSS] = useState<string>("");
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
+
   useEffect(() => {
     setCardCSS(`
     .card-${slug} {
@@ -40,6 +46,22 @@ export const PostCard = ({
     }
   `);
   }, [isHover, slug]);
+
+  if (isLoading === true) {
+    // skeleton
+    return (
+      <article className="pt-4 pb-4 rounded-md border border-solid shadow-lg">
+        <div className="flex flex-col gap-6 m-6 animate-pulse">
+          <div className="w-108 h-72 rounded-md shadow overflow-hidden bg-slate-600 bg-fixed transition"></div>
+          <div className="flex flex-col gap-2 items-end">
+            <div className="w-52 h-6 rounded-md bg-slate-600" />
+            <div className="w-28 h-6 rounded-md bg-slate-600" />
+          </div>
+        </div>
+      </article>
+    );
+  }
+
   return (
     <a
       href="/"
