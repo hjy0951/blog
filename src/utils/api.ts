@@ -4,7 +4,7 @@ import { join } from "path";
 import matter from "gray-matter";
 import { Items } from "@/types";
 
-const postsDirectory = join(process.cwd(), "/contents");
+const postsDirectory = join(process.cwd(), "/posts");
 
 export function getPostTags() {
   const ret = fs.readdirSync(postsDirectory);
