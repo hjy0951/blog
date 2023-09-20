@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Heojoooon's blog",
@@ -13,7 +15,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body>
+        <div className="flex flex-col gap-8">
+          <Header />
+          {children}
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }
