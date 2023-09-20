@@ -5,7 +5,7 @@ import NotFoundSvg from "@/assets/404.svg";
 export default function NotFound() {
   return (
     <div className="pt-12 flex flex-col items-center">
-      <section className="flex flex-col gap-10 items-center">
+      <div className="flex flex-col gap-10 items-center">
         <Image
           src={NotFoundSvg}
           width={432}
@@ -21,7 +21,7 @@ export default function NotFound() {
           <p>홈으로 이동</p>
           <p className="text-xs">{'"Go home"'}</p>
         </Link>
-      </section>
+      </div>
     </div>
   );
 }
