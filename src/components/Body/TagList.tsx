@@ -1,4 +1,4 @@
-import { processedTagName } from "@/utils/constants";
+import { processedTagName } from "@/libs/constants";
 
 interface Props {
   tagData: [string, number][];

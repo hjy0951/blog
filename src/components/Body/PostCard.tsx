@@ -1,6 +1,6 @@
 "use client";
 
-import { processedTagName } from "@/utils/constants";
+import { processedTagName } from "@/libs/constants";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 

@@ -1,5 +1,5 @@
 import { Body } from "@/components/Body";
-import { getAllPosts, getPostTagsAndEachCount } from "@/utils/api";
+import { getAllPosts, getPostTagsAndEachCount } from "@/libs/api";
 
 export default function Home() {
   const tagData = getPostTagsAndEachCount();
