@@ -1,5 +1,6 @@
 "use client";
 
+import { cookieRun } from "@/styles/font";
 import { processedTagName } from "@/libs/constants";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -68,7 +69,7 @@ export const PostCard = ({
       onMouseOver={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      <div className={`card-${slug}`}>
+      <div className={`card-${slug} ${cookieRun.className}`}>
         <style>{cardCSS}</style>
         {/* 앞면 */}
         <article

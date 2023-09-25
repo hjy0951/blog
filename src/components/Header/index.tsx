@@ -1,7 +1,9 @@
+import { cookieRun } from "@/styles/font";
+
 export const Header = () => {
   return (
     <header className="sticky top-0 w-full h-20 border-b flex justify-evenly items-center shadow z-10 bg-white">
-      <div className="w-32">
+      <div className={`${cookieRun.className} w-32`}>
         <a href="/" className="hover:underline">
           <p>Heojoooon.</p>
         </a>

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@/styles/globals.css";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { pretendard } from "@/styles/font";
 
 export const metadata: Metadata = {
   title: "Heojoooon's blog",
@@ -15,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body>
+      <body className={pretendard.className}>
         <div className="flex flex-col gap-8">
           <Header />
           {children}
