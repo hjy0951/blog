@@ -29,7 +29,9 @@ export const Post = ({ slug, postData }: Props) => {
             alt="Post Thumbnail"
           />
         </div>
-        <MDXRemote source={content} />
+        <div className="prose">
+          <MDXRemote source={content} />
+        </div>
       </div>
     </main>
   );
