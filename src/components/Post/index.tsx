@@ -13,9 +13,11 @@ export const Post = ({ slug, postData }: Props) => {
 
   return (
     <main className="flex flex-col items-center">
-      <div className=" max-w-screen-md flex flex-col gap-10">
-        <div className={`${cookieRun.className} flex flex-col gap-5`}>
-          <div className="text-3xl">{title}</div>
+      <div className="max-w-screen-md flex flex-col gap-10 items-center">
+        <div className={`${cookieRun.className} flex flex-col gap-5 w-full`}>
+          <div className="flex justify-center">
+            <div className="text-3xl">{title}</div>
+          </div>
           <div className="flex flex-col items-end">
             {tags.map((tag: string, index: number) => (
               <div key={index}>{tag}</div>
@@ -31,7 +33,7 @@ export const Post = ({ slug, postData }: Props) => {
             alt="Post Thumbnail"
           />
         </div>
-        <article className="prose">
+        <article className="prose max-w-3xl">
           <MDXRemote source={content} />
         </article>
       </div>
