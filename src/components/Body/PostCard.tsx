@@ -1,6 +1,6 @@
 "use client";
 
-import { cookieRun } from "@/styles/font";
+import { yeongdeokSea } from "@/styles/font";
 import { processedTagName } from "@/libs/constants";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -69,11 +69,11 @@ export const PostCard = ({
       onMouseOver={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      <div className={`card-${slug} ${cookieRun.className}`}>
+      <div className={`card-${slug} ${yeongdeokSea.className}`}>
         <style>{cardCSS}</style>
         {/* 앞면 */}
         <article
-          className={`card-front-${slug} pt-4 pb-4 rounded-md border border-solid shadow-lg`}
+          className={`card-front-${slug} pt-4 pb-4 text-lg rounded-md border border-solid shadow-lg`}
         >
           <div className="flex flex-col gap-6 m-6">
             <Image

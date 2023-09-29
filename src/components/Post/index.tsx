@@ -1,7 +1,7 @@
 import { Items } from "@/types";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { cookieRun } from "@/styles/font";
+import { yeongdeokSea } from "@/styles/font";
 
 interface Props {
   slug: string;
@@ -14,7 +14,7 @@ export const Post = ({ slug, postData }: Props) => {
   return (
     <main className="flex flex-col items-center">
       <div className="max-w-screen-md flex flex-col gap-10 items-center">
-        <div className={`${cookieRun.className} flex flex-col gap-5 w-full`}>
+        <div className={`${yeongdeokSea.className} flex flex-col gap-5 w-full`}>
           <div className="flex justify-center">
             <div className="text-3xl">{title}</div>
           </div>
