@@ -2,6 +2,8 @@ import { Items } from "@/types";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { yeongdeokSea } from "@/styles/font";
+import { DateFormat } from "./DateFormat";
+import { processedTagName } from "@/libs/constants";
 
 interface Props {
   slug: string;
@@ -18,18 +20,26 @@ export const Post = ({ slug, postData }: Props) => {
           <div className="flex justify-center">
             <div className="text-3xl">{title}</div>
           </div>
-          <div className="flex flex-col items-end">
+          <div className="flex flex-col items-end gap-2">
             {tags.map((tag: string, index: number) => (
-              <div key={index}>{tag}</div>
+              <div
+                key={index}
+                className="py-0.5 pr-2 pl-2 rounded-md border border-solid shadow-inner"
+              >
+                <span className="underline underline-offset-4 decoration-wavy decoration-red-600">
+                  {processedTagName[tag]}
+                </span>
+              </div>
             ))}
-            <div>{createdAt}</div>
+            <DateFormat createdAt={createdAt} />
+            {/* <div>{createdAt}</div> */}
           </div>
         </div>
         <div>
           <Image
             src={`/contents/${tags[0]}/${slug}/cover.png`}
-            width={700}
-            height={500}
+            width={480}
+            height={320}
             alt="Post Thumbnail"
           />
         </div>
