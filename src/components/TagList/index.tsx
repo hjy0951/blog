@@ -1,4 +1,5 @@
 import { processedTagName } from "@/libs/constants";
+import Link from "next/link";
 
 interface Props {
   tagData: [string, number][];
@@ -10,12 +11,16 @@ export const Tags = ({ tagData }: Props) => {
   }, 0);
   const tagList = [["all", totalPostCount]].concat(tagData);
   const createTag = (data: (string | number)[], idx: number) => {
-    const name = processedTagName[data[0]];
+    const tagName = data[0];
     return (
-      <div key={idx} className="flex underline-offset-4 hover:underline">
-        <h3>{name}</h3>
+      <Link
+        href={`/${tagName === "all" ? "" : "tags/" + tagName}`}
+        key={idx}
+        className="flex underline-offset-4 hover:underline"
+      >
+        <h3>{processedTagName[tagName]}</h3>
         <p>{"(" + data[1] + ")"}</p>
-      </div>
+      </Link>
     );
   };
 

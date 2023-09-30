@@ -1,14 +1,18 @@
 import { Items } from "@/types";
-import { Tags } from "./TagList";
-import { PostCard } from "./PostCard";
+import { Tags } from "@/components/TagList";
+import { PostCard } from "@/components/PostCard";
 
 interface Props {
   tagData: [string, number][];
   allPosts: Items[];
+  selected?: string;
 }
 
-export const Body = ({ tagData, allPosts }: Props) => {
+export const Body = ({ tagData, allPosts, selected }: Props) => {
   console.log(allPosts);
+  if (selected !== undefined) {
+    allPosts = allPosts.filter((post) => post.tags[0] === selected);
+  }
   return (
     <main>
       <div className="w-full flex items-center justify-center">
