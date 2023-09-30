@@ -1,16 +1,28 @@
 import { Items } from "@/types";
 import Image from "next/image";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { MDXRemote, compileMDX } from "next-mdx-remote/rsc";
 import { yeongdeokSea } from "@/styles/font";
 import { DateFormat } from "./DateFormat";
 import { processedTagName } from "@/libs/constants";
+import { Suspense } from "react";
+import rehypePrism from "rehype-prism-plus";
 
 interface Props {
   slug: string;
   postData: Items;
 }
 
-export const Post = ({ slug, postData }: Props) => {
+const getCompiledContent = async (content: string) => {
+  const { content: compiledContent } = await compileMDX({
+    source: content,
+    options: {
+      mdxOptions: { rehypePlugins: [rehypePrism] },
+    },
+  });
+  return compiledContent;
+};
+
+export const Post = async ({ slug, postData }: Props) => {
   const { title, tags, createdAt, content } = postData;
 
   return (
@@ -44,7 +56,9 @@ export const Post = ({ slug, postData }: Props) => {
           />
         </div>
         <article className="prose max-w-3xl">
-          <MDXRemote source={content} />
+          <Suspense fallback={<div>loading...</div>}>
+            {getCompiledContent(content)}
+          </Suspense>
         </article>
       </div>
     </main>

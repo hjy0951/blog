@@ -28,7 +28,7 @@ C와 같은 `정적 타입 언어`는 **코드가 기계어로 컴파일될 때 
 변수에 구체적인 타입을 명시하는 것이 아닌, 위의 키워드를 사용하여 변수를 선언하고, 런타임에 타입이 결정된다.<br/>
 따라서 타입에 대해 굉장히 너그럽다.
 
-```
+```js showLineNumbers
 const a = 10;
 ```
 
@@ -85,9 +85,9 @@ Single Thread의 의미는 한번에 하나의 일만을 처리할 수 있다는
 그렇다면 반대로 동기의 개념은 "동시에 일어난다."이다.<br/>
 즉, 코드가 실행되면 코드가 끝이 날 때, 결과가 즉시 발생한다는 것이다.
 
-```
+```js showLineNumbers
 function sumAll(list) {
-	return list.reduce((a, b) => a + b, 0);
+  return list.reduce((a, b) => a + b, 0);
 }
 
 const total = sumAll(numberList);

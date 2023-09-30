@@ -9,10 +9,10 @@ updatedAt: ""
 
 > 잘못되었거나 수정이 필요한 내용이 있을 수 있습니다. 그런 경우, 댓글로 남겨주시면 정말 감사하겠습니다.
 
-```
+```js showLineNumbers
 console.log(name);
 
-var name = 'Heo';
+var name = "Heo";
 ```
 
 내가 위와 같은 코드를 맨처음 접했을때, 당연히 오류가 난다고 생각하였다. (물론, `undefined`가 출력된다.)<br/>
@@ -59,11 +59,11 @@ let과 const로 선언된 변수의 경우, 다음과 같은 에러가 발생한
 
 함수도 변수와 마찬가지로 호이스팅이 일어난다.
 
-```
+```js showLineNumbers
 hello(); // hello!
 
 function hello() {
-	console.log("hello!");
+  console.log("hello!");
 }
 
 hello(); // hello!
@@ -73,12 +73,12 @@ hello(); // hello!
 
 하지만 다음과 같이 `함수 표현식`을 사용한 경우, 아래의 에러가 발생한다.
 
-```
+```js showLineNumbers
 hello();
 
-var hello = function() {
-	console.log("hello!");
-}
+var hello = function () {
+  console.log("hello!");
+};
 ```
 
 > TypeError: inner is not a function
@@ -88,12 +88,12 @@ var hello = function() {
 
 그래서 코드를 `var`가 아닌 `const`로 수정하여 다시 실행해보았다.
 
-```
+```js showLineNumbers
 hello();
 
-const hello = function() {
-	console.log("hello!");
-}
+const hello = function () {
+  console.log("hello!");
+};
 ```
 
 > ReferenceError: hello is not defined
@@ -102,12 +102,12 @@ const hello = function() {
 
 그렇다면 화살표 함수의 경우는 어떨까?
 
-```
+```js showLineNumbers
 hello();
 
 const hello = () => {
-	console.log("hello!");
-}
+  console.log("hello!");
+};
 ```
 
 > ReferenceError: hello is not defined
@@ -121,7 +121,7 @@ const hello = () => {
 이전 회사에서 나는 Linux 환경에서 모바일 기기의 Kernel Driver를 개발하는 업무를 진행했었다.<br/>
 이때 코드 중간에 변수 선언하는 것을 컴파일러 자체가 막아놨었다. (C99부턴가 가능해졌다고 한다...)
 
-```
+```js showLineNumbers
 int getTotal(int arr[], int len) {
 	int sum = 0; // ok
 
@@ -163,8 +163,8 @@ int getTotal(int arr[], int len) {
 
 이후에 JavaScript를 공부하면서 호이스팅을 접하게 되었을 때에도 같은 이유로 그런 것이 아닌가라는 생각이 들었다.
 
-```
-var a = 'abc';
+```js showLineNumbers
+var a = "abc";
 ```
 
 ![javascript-runtime](/contents/javascript/Javascript-Hoisting/1.png)
