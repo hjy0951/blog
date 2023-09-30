@@ -3,7 +3,7 @@ interface Props {
 }
 export const DateFormat = ({ createdAt }: Props) => {
   const splitDate = createdAt.split(".").map((el) => el.split(""));
-  console.log(splitDate);
+
   return (
     <div className="flex gap-1">
       {splitDate.map((date, idx1) => (
