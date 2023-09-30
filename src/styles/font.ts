@@ -37,6 +37,11 @@ export const suite = localFont({
       weight: "900",
       style: "normal",
     },
+    {
+      path: "./fonts/Suite/SUITE-Variable.woff2",
+      weight: "300 900",
+      style: "normal",
+    },
   ],
   variable: "--font-suite",
   display: "swap",
