@@ -12,7 +12,7 @@ export const Header = () => {
         </div> */}
       </div>
       <div className="w-1/3 h-full" />
-      <div className="flex w-1/4 justify-evenly">
+      <div className="flex w-1/5 justify-evenly">
         <a href="https://github.com/hjy0951">
           {/* <p>GitHub</p> */}
           <svg
