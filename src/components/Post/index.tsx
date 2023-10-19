@@ -44,7 +44,6 @@ export const Post = async ({ slug, postData }: Props) => {
               </div>
             ))}
             <DateFormat createdAt={createdAt} />
-            {/* <div>{createdAt}</div> */}
           </div>
         </div>
         <div>
