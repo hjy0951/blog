@@ -1,6 +1,6 @@
-import { Items } from "@/types";
-import { Tags } from "@/components/TagList";
-import { PostCard } from "@/components/PostCard";
+import { Items } from "types";
+import { Tags } from "@components/TagList";
+import { PostCard } from "@components/PostCard";
 
 interface Props {
   tagData: [string, number][];

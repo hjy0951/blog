@@ -1,4 +1,4 @@
-import { processedTagName } from "@/libs/constants";
+import { processedTagName } from "@libs/constants";
 import Link from "next/link";
 
 interface Props {
