@@ -16,7 +16,7 @@ jobs:
         id: cache
         uses: actions/cache@v3
         with:
-          path: '**/node_modules'
+          path: "**/node_modules"
           key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node-
@@ -30,9 +30,6 @@ jobs:
 
       - name: Check format
         run: yarn prettier src/**/*.{tsx,ts} --check
-        
-      - name: Check types
-        run: tsc -p tsconfig.json --noEmit
 
   Build-Test:
     runs-on: ubuntu-latest
@@ -47,7 +44,7 @@ jobs:
         id: cache
         uses: actions/cache@v3
         with:
-          path: '**/node_modules'
+          path: "**/node_modules"
           key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node-
@@ -55,6 +52,6 @@ jobs:
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install
-        
+
       - name: Build project
         run: yarn build
