@@ -1,5 +1,5 @@
-import { Post } from "@components/Post";
-import { getPostBySlug } from "@libs/api";
+import { Post } from "@/components/Post";
+import { getPostBySlug } from "@/libs/api";
 
 interface Props {
   params: { slug: string[] };

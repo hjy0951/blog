@@ -1,5 +1,8 @@
-import { getAllPosts, getPostTagsAndEachCount } from "@libs/api";
-import { Body } from "@components/Body";
+import { Items } from "@/types";
+import { Tags } from "@/components/TagList";
+import { PostCard } from "@/components/PostCard";
+import { getAllPosts, getPostTagsAndEachCount } from "@/libs/api";
+import { Body } from "@/components/Body";
 
 interface Props {
   params: { tag: string };

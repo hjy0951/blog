@@ -1,7 +1,7 @@
 "use client";
 
-import { yeongdeokSea } from "@styles/font";
-import { processedTagName } from "@libs/constants";
+import { yeongdeokSea } from "@/styles/font";
+import { processedTagName } from "@/libs/constants";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 

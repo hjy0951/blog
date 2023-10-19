@@ -1,4 +1,4 @@
-import { yeongdeokSea } from "@styles/font";
+import { yeongdeokSea } from "@/styles/font";
 import { ModeButton } from "./ModeButton";
 
 export const Header = () => {
