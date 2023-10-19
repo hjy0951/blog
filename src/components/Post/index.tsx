@@ -22,7 +22,7 @@ const getCompiledContent = async (content: string) => {
   return compiledContent;
 };
 
-export const Post = async ({ slug, postData }: Props) => {
+export const Post = ({ slug, postData }: Props) => {
   const { title, tags, createdAt, content } = postData;
 
   return (
