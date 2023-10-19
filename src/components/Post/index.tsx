@@ -22,7 +22,7 @@ const getCompiledContent = async (content: string) => {
   return compiledContent;
 };
 
-export const Post = ({ slug, postData }: Props) => {
+export const Post = async ({ slug, postData }: Props) => {
   const { title, tags, createdAt, content } = postData;
 
   return (
@@ -56,9 +56,7 @@ export const Post = ({ slug, postData }: Props) => {
           />
         </div>
         <article className="prose max-w-3xl">
-          <Suspense fallback={<div>loading...</div>}>
-            {getCompiledContent(content)}
-          </Suspense>
+          {await getCompiledContent(content)}
         </article>
       </div>
     </main>
