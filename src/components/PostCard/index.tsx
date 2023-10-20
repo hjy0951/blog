@@ -77,7 +77,7 @@ export const PostCard = ({
         >
           <div className="flex flex-col gap-6 m-6">
             <Image
-              className="rounded-md"
+              className="rounded-md border border-gray-100"
               src={`/contents/${tags[0]}/${slug}/cover.png`}
               width={432}
               height={288}
