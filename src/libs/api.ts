@@ -15,7 +15,9 @@ export function getPostTagsAndEachCount() {
   const ret: [string, number][] = [];
   const tags = getPostTags();
   tags.forEach((tag) => {
-    const count = fs.readdirSync(join(postsDirectory, `/${tag}`)).length;
+    const count = fs
+      .readdirSync(join(postsDirectory, `/${tag}`))
+      .filter((tag) => tag !== ".DS_Store").length;
     ret.push([tag, count]);
   });
   return ret;
