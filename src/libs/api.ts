@@ -7,8 +7,8 @@ import { Items } from "@/types";
 const postsDirectory = join(process.cwd(), "/posts");
 
 export function getPostTags() {
-  const ret = fs.readdirSync(postsDirectory);
-  return ret;
+  let ret = fs.readdirSync(postsDirectory);
+  return ret.filter((tag) => tag !== ".DS_Store");
 }
 
 export function getPostTagsAndEachCount() {
@@ -25,7 +25,11 @@ export function getPostSlugs(tags: string[]) {
   let totalSlugs: string[] = [];
   tags.forEach((tag) => {
     const dirPath = join(postsDirectory, tag);
-    const slugs = fs.readdirSync(dirPath).map((el) => `${tag}/${el}`);
+    console.log(dirPath);
+    const slugs = fs
+      .readdirSync(dirPath)
+      .filter((slug) => slug !== ".DS_Store")
+      .map((slug) => `${tag}/${slug}`);
     totalSlugs = [...totalSlugs, ...slugs];
   });
   return totalSlugs;
