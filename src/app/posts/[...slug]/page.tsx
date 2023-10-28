@@ -1,3 +1,4 @@
+import Giscus from "@/components/GiscusComments";
 import { Post } from "@/components/Post";
 import { getPostBySlug } from "@/libs/api";
 
@@ -18,6 +19,9 @@ export default function Page({ params }: Props) {
   return (
     <>
       <Post slug={slug[1]} postData={postData} />
+      <div className="w-full flex items-center justify-center">
+        <Giscus />
+      </div>
     </>
   );
 }
