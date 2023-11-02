@@ -8,7 +8,6 @@ interface Props {
 
 export default function Page({ params }: Props) {
   const { slug } = params;
-  console.log(slug);
   const postData = getPostBySlug(slug.join("/"), [
     "title",
     "tags",
