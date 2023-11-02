@@ -1,11 +1,11 @@
-import { processedTagName } from "@/libs/constants";
 import Link from "next/link";
+import { processedTagName } from "@/libs/constants";
 
 interface Props {
   tagData: [string, number][];
 }
 
-export const Tags = ({ tagData }: Props) => {
+const Tags = ({ tagData }: Props) => {
   const totalPostCount = tagData.reduce((acc, el) => {
     return acc + el[1];
   }, 0);
@@ -32,3 +32,5 @@ export const Tags = ({ tagData }: Props) => {
     </div>
   );
 };
+
+export default Tags;

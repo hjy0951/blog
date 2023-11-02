@@ -1,9 +1,9 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { yeongdeokSea } from "@/styles/font";
 import { processedTagName } from "@/libs/constants";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
 
 interface Props {
   slug: string;
@@ -13,13 +13,7 @@ interface Props {
   createdAt: string;
 }
 
-export const PostCard = ({
-  slug,
-  title,
-  description,
-  tags,
-  createdAt,
-}: Props) => {
+const PostCard = ({ slug, title, description, tags, createdAt }: Props) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isHover, setIsHover] = useState<boolean>(false);
   const [cardCSS, setCardCSS] = useState<string>("");
@@ -121,3 +115,5 @@ export const PostCard = ({
     </a>
   );
 };
+
+export default PostCard;

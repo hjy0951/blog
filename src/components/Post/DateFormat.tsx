@@ -1,7 +1,8 @@
 interface Props {
   createdAt: string;
 }
-export const DateFormat = ({ createdAt }: Props) => {
+
+const DateFormat = ({ createdAt }: Props) => {
   const splitDate = createdAt.split(".").map((el) => el.split(""));
 
   return (
@@ -39,3 +40,5 @@ export const DateFormat = ({ createdAt }: Props) => {
     </div>
   );
 };
+
+export default DateFormat;

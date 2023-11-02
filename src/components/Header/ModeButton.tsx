@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-export const ModeButton = () => {
+const ModeButton = () => {
   const clickModeButton = () => {
     alert("준비중입니다!");
   };
@@ -11,3 +11,5 @@ export const ModeButton = () => {
     </button>
   );
 };
+
+export default ModeButton;

@@ -1,5 +1,5 @@
 import Giscus from "@/components/GiscusComments";
-import { Post } from "@/components/Post";
+import Post from "@/components/Post";
 import { getPostBySlug } from "@/libs/api";
 
 interface Props {

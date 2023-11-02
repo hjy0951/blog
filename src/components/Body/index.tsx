@@ -1,6 +1,6 @@
 import { Items } from "@/types";
-import { Tags } from "@/components/TagList";
-import { PostCard } from "@/components/PostCard";
+import Tags from "@/components/TagList";
+import PostCard from "@/components/PostCard";
 
 interface Props {
   tagData: [string, number][];
@@ -8,7 +8,7 @@ interface Props {
   selected?: string;
 }
 
-export const Body = ({ tagData, allPosts, selected }: Props) => {
+const Body = ({ tagData, allPosts, selected }: Props) => {
   console.log(allPosts);
   if (selected !== undefined) {
     allPosts = allPosts.filter((post) => post.tags[0] === selected);
@@ -39,3 +39,5 @@ export const Body = ({ tagData, allPosts, selected }: Props) => {
     </main>
   );
 };
+
+export default Body;

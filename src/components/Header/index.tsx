@@ -1,7 +1,7 @@
 import { yeongdeokSea } from "@/styles/font";
-import { ModeButton } from "./ModeButton";
+import ModeButton from "./ModeButton";
 
-export const Header = () => {
+const Header = () => {
   return (
     <header className="sticky top-0 w-full h-20 border-b flex justify-evenly items-center shadow z-10 bg-white">
       <div className={`${yeongdeokSea.className} w-32`}>
@@ -53,3 +53,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default Header;

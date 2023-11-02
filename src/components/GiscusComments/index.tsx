@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-export default function Giscus() {
+const Giscus = () => {
   const ref = useRef<HTMLDivElement>(null);
   const theme = "light_tritanopia";
 
@@ -37,4 +37,6 @@ export default function Giscus() {
   }, [theme]);
 
   return <section className="w-1/2" ref={ref} />;
-}
+};
+
+export default Giscus;

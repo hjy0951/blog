@@ -1,4 +1,4 @@
-import { Body } from "@/components/Body";
+import Body from "@/components/Body";
 import { getAllPosts, getPostTagsAndEachCount } from "@/libs/api";
 
 export default function Home() {

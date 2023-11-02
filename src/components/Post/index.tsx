@@ -1,11 +1,11 @@
-import { Items } from "@/types";
-import Image from "next/image";
-import { MDXRemote, compileMDX } from "next-mdx-remote/rsc";
-import { yeongdeokSea } from "@/styles/font";
-import { DateFormat } from "./DateFormat";
-import { processedTagName } from "@/libs/constants";
 import { Suspense } from "react";
 import rehypePrism from "rehype-prism-plus";
+import Image from "next/image";
+import { Items } from "@/types";
+import { MDXRemote, compileMDX } from "next-mdx-remote/rsc";
+import { yeongdeokSea } from "@/styles/font";
+import DateFormat from "./DateFormat";
+import { processedTagName } from "@/libs/constants";
 
 interface Props {
   slug: string;
@@ -19,10 +19,11 @@ const getCompiledContent = async (content: string) => {
       mdxOptions: { rehypePlugins: [rehypePrism] },
     },
   });
+  console.log(compiledContent);
   return compiledContent;
 };
 
-export const Post = async ({ slug, postData }: Props) => {
+const Post = async ({ slug, postData }: Props) => {
   const { title, tags, createdAt, content } = postData;
 
   return (
@@ -61,3 +62,5 @@ export const Post = async ({ slug, postData }: Props) => {
     </main>
   );
 };
+
+export default Post;
