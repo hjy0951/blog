@@ -1,12 +1,15 @@
 "use client";
-import React from "react";
+import useDarkMode from "@/hooks/useDarkMode";
+import React, { MouseEventHandler } from "react";
 
 const ModeButton = () => {
-  const clickModeButton = () => {
-    alert("준비중입니다!");
-  };
+  const [isDark, darkModeButtonHandler] = useDarkMode();
   return (
-    <button className="dark:text-white" type="button" onClick={clickModeButton}>
+    <button
+      className="dark:text-white"
+      type="button"
+      onClick={darkModeButtonHandler as MouseEventHandler<HTMLButtonElement>}
+    >
       Mode
     </button>
   );
