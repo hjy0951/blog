@@ -17,7 +17,7 @@ const Body = ({ tagData, allPosts, selected }: Props) => {
     <main>
       <div className="w-full flex items-center justify-center">
         <div className="flex flex-col gap-6 items-center justify-center">
-          <Tags tagData={tagData} />
+          <Tags tagData={tagData} selected={selected} />
           <div>
             <div className="text-2xl font-bold leading-loose">
               <p>Posts</p>
