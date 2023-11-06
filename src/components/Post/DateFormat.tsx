@@ -10,15 +10,12 @@ const DateFormat = ({ createdAt }: Props) => {
       {splitDate.map((date, idx1) => (
         <div
           key={idx1}
-          className="flex rounded-md border border-solid shadow-inner"
+          className="flex rounded-md shadow-inner shadow-gray-300 dark:shadow-gray-950"
         >
           {date.map((num, idx2) => {
             if (idx2 === 0)
               return (
-                <div
-                  key={idx2}
-                  className="p-1 pl-2 rounded-l-md border-r border-solid"
-                >
+                <div key={idx2} className="p-1 pl-2 rounded-l-md">
                   {num}
                 </div>
               );
@@ -30,7 +27,7 @@ const DateFormat = ({ createdAt }: Props) => {
               );
             else
               return (
-                <div key={idx2} className="p-1 border-r border-solid">
+                <div key={idx2} className="p-1 ">
                   {num}
                 </div>
               );

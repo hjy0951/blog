@@ -35,9 +35,9 @@ const Post = async ({ slug, postData }: Props) => {
             {tags.map((tag: string, index: number) => (
               <div
                 key={index}
-                className="py-0.5 pr-2 pl-2 rounded-md border border-solid shadow-inner"
+                className="py-0.5 pr-2 pl-2 rounded-md shadow-inner shadow-gray-300 dark:shadow-gray-950"
               >
-                <span className="underline underline-offset-4 decoration-wavy decoration-red-600">
+                <span className="underline underline-offset-4 decoration-wavy decoration-red-600 ">
                   {processedTagName[tag]}
                 </span>
               </div>
