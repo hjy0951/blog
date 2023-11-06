@@ -8,7 +8,7 @@ const Header = () => {
     dark:bg-slate-800 dark:text-white"
     >
       <div className={`${yeongdeokSea.className} w-32`}>
-        <a href="/" className="hover:underline">
+        <a href="/" className="text-lg hover:underline">
           <p>Heojoooon.</p>
         </a>
         {/* <div className="flex justify-end">
