@@ -15,7 +15,10 @@ const Body = ({ tagData, allPosts, selected }: Props) => {
   return (
     <main>
       <div className="w-full flex items-center justify-center">
-        <div className="flex flex-col gap-6 items-center justify-center">
+        <div
+          className="flex flex-col gap-6 items-center justify-center"
+          style={{ width: "80rem" }}
+        >
           <Tags tagData={tagData} selected={selected} />
           <div>
             <div className="text-2xl font-bold leading-loose dark:text-white">
