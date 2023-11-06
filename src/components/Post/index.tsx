@@ -27,7 +27,7 @@ const Post = async ({ slug, postData }: Props) => {
   const { title, tags, createdAt, content } = postData;
 
   return (
-    <main className="flex flex-col items-center">
+    <main className="flex flex-col items-center dark:text-white">
       <div className="max-w-screen-md flex flex-col gap-10 items-center">
         <div className={`${yeongdeokSea.className} flex flex-col gap-5 w-full`}>
           <div className="flex justify-center">
@@ -55,7 +55,7 @@ const Post = async ({ slug, postData }: Props) => {
             alt="Post Thumbnail"
           />
         </div>
-        <article className="prose max-w-3xl">
+        <article className="prose dark:prose-dark max-w-3xl">
           {await getCompiledContent(content)}
         </article>
       </div>
