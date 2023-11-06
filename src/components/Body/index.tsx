@@ -9,7 +9,6 @@ interface Props {
 }
 
 const Body = ({ tagData, allPosts, selected }: Props) => {
-  console.log(allPosts);
   if (selected !== undefined) {
     allPosts = allPosts.filter((post) => post.tags[0] === selected);
   }

@@ -27,7 +27,6 @@ export function getPostSlugs(tags: string[]) {
   let totalSlugs: string[] = [];
   tags.forEach((tag) => {
     const dirPath = join(postsDirectory, tag);
-    console.log(dirPath);
     const slugs = fs
       .readdirSync(dirPath)
       .filter((slug) => slug !== ".DS_Store")

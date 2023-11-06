@@ -18,7 +18,6 @@ const getCompiledContent = async (content: string) => {
       mdxOptions: { rehypePlugins: [rehypePrism] },
     },
   });
-  console.log(compiledContent);
   return compiledContent;
 };
 
