@@ -1,8 +1,7 @@
-import { Suspense } from "react";
 import rehypePrism from "rehype-prism-plus";
 import Image from "next/image";
 import { Items } from "@/types";
-import { MDXRemote, compileMDX } from "next-mdx-remote/rsc";
+import { compileMDX } from "next-mdx-remote/rsc";
 import { yeongdeokSea } from "@/styles/font";
 import DateFormat from "./DateFormat";
 import { processedTagName } from "@/libs/constants";
