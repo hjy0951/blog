@@ -1,6 +1,9 @@
-import { useEffect, useState } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
 
-const useDarkMode = () => {
+const useDarkMode = (): [
+  isDark: boolean,
+  darkModeButtonHandler: MouseEventHandler<HTMLButtonElement>,
+] => {
   const [isDark, setIsDark] = useState<boolean>(false);
 
   const darkModeButtonHandler = () => {
