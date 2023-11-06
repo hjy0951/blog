@@ -10,5 +10,6 @@ export default function Home() {
     "tags",
     "createdAt",
   ]);
+
   return <Body tagData={tagData} allPosts={posts} />;
 }

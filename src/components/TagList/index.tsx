@@ -16,17 +16,22 @@ const Tags = ({ tagData }: Props) => {
       <Link
         href={`/${tagName === "all" ? "" : "tags/" + tagName}`}
         key={idx}
-        className="flex underline-offset-4 hover:underline"
+        className="flex gap-1"
       >
-        <h3>{processedTagName[tagName]}</h3>
-        <p>{"(" + data[1] + ")"}</p>
+        <p className="underline-offset-4 hover:underline">
+          {processedTagName[tagName]}
+        </p>
+        <p className="text-end text-xs">{"(" + data[1] + ")"}</p>
       </Link>
     );
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex gap-2">
+    <div className="w-full flex flex-col items-start">
+      <div className="w-full flex gap-1 items-center justify-start text-2xl font-bold leading-loose">
+        <p>Tags</p>
+      </div>
+      <div className="pl-6 p-3 flex gap-5">
         {tagList.map((tag, idx) => createTag(tag, idx))}
       </div>
     </div>

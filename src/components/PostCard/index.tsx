@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import { yeongdeokSea } from "@/styles/font";
 import { processedTagName } from "@/libs/constants";
 
 interface Props {
@@ -14,48 +13,7 @@ interface Props {
 }
 
 const PostCard = ({ slug, title, description, tags, createdAt }: Props) => {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isHover, setIsHover] = useState<boolean>(false);
-  const [cardCSS, setCardCSS] = useState<string>("");
-
-  useEffect(() => {
-    setIsLoading(false);
-  }, []);
-
-  useEffect(() => {
-    setCardCSS(`
-    .card-${slug} {
-      display: inline-grid;
-      transition: transform 0.3s;
-      transform: perspective(2000px) rotateY(${isHover ? 180 : 0}deg);
-      transform-style: preserve-3d;
-    }
-
-    .card-${slug} > * {
-      grid-area: 1 / 1 / 1 / 1;
-      backface-visibility: hidden;
-    }
-
-    .card-back-${slug} {
-      transform: rotateY(180deg);
-    }
-  `);
-  }, [isHover, slug]);
-
-  if (isLoading === true) {
-    // skeleton
-    return (
-      <article className="pt-4 pb-4 rounded-md border border-solid shadow-lg">
-        <div className="flex flex-col gap-6 m-6 animate-pulse">
-          <div className="w-108 h-72 rounded-md shadow overflow-hidden bg-slate-600 bg-fixed transition"></div>
-          <div className="flex flex-col gap-2 items-end">
-            <div className="w-52 h-6 rounded-md bg-slate-600" />
-            <div className="w-28 h-6 rounded-md bg-slate-600" />
-          </div>
-        </div>
-      </article>
-    );
-  }
 
   return (
     <a
@@ -63,54 +21,42 @@ const PostCard = ({ slug, title, description, tags, createdAt }: Props) => {
       onMouseOver={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      <div className={`card-${slug} ${yeongdeokSea.className}`}>
-        <style>{cardCSS}</style>
-        {/* 앞면 */}
-        <article
-          className={`card-front-${slug} pt-4 pb-4 text-lg rounded-md border border-solid shadow-lg`}
-        >
-          <div className="flex flex-col gap-6 m-6">
-            <Image
-              className="rounded-md border border-gray-100"
-              src={`/contents/${tags[0]}/${slug}/cover.png`}
-              width={432}
-              height={288}
-              alt={slug + " thumbnail"}
-              priority
-            />
-            <div className="flex flex-col gap-2 items-end">
-              <p>{title}</p>
-              <p>{createdAt}</p>
+      <div
+        className={`p-6 w-80 flex flex-col rounded-md transition-transform transform-gpu hover:translate-y-[-15px] ${
+          isHover ? "shadow-lg" : ""
+        }`}
+      >
+        <div className="w-full relative">
+          <Image
+            className={`rounded-md transition-transform filter ${
+              isHover ? " brightness-50" : ""
+            }`}
+            draggable={false}
+            src={`/contents/${tags[0]}/${slug}/cover.png`}
+            width={300}
+            height={300}
+            alt={slug + " thumbnail"}
+            priority
+          />
+          {isHover && (
+            <div className="absolute top-3 left-4 text-slate-50">
+              {tags.map((tag) => (
+                <p key={`tag-name-${tag}`}>{processedTagName[tag]}</p>
+              ))}
             </div>
-          </div>
-        </article>
-        {/* 뒷면 */}
-        <article
-          className={`card-back-${slug} pt-4 pb-4 rounded-md border border-solid shadow-lg`}
-        >
-          <div className="flex flex-col gap-6 m-6">
-            <div className="w-108 h-72 rounded-md shadow overflow-hidden bg-[hsl(0,0%,10%,0.8)] bg-fixed transition"></div>
-            <div className="flex flex-col gap-2 items-start">
-              <div className="flex gap-2">
-                {tags.map((tag, idx) => {
-                  return (
-                    <p
-                      key={idx}
-                      className="underline underline-offset-4 decoration-wavy decoration-red-600"
-                    >
-                      {processedTagName[tag]}
-                      {/* {tags.map((tag) => processedTagName[tag])} */}
-                    </p>
-                  );
-                })}
-                {/* <p className="underline underline-offset-4 decoration-wavy decoration-red-600">
-                  {tags.map((tag) => processedTagName[tag])}
-                </p> */}
-              </div>
-              <p>{description}</p>
-            </div>
-          </div>
-        </article>
+          )}
+        </div>
+        <div className={`pt-4 w-full ${isHover ? "underline" : ""}`}>
+          <p className="whitespace-normal text-base">{title}</p>
+        </div>
+        <div className="pt-3 w-full">
+          <p className="whitespace-normal text-xs text-slate-500">
+            {description}
+          </p>
+        </div>
+        <div className="pt-3 flex justify-end font-xs">
+          <p className="text-xs text-slate-500">{createdAt}</p>
+        </div>
       </div>
     </a>
   );

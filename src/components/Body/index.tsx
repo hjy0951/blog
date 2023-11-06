@@ -1,6 +1,6 @@
 import { Items } from "@/types";
 import Tags from "@/components/TagList";
-import PostCard from "@/components/PostCard";
+import PostCard from "../PostCard";
 
 interface Props {
   tagData: [string, number][];
@@ -16,10 +16,13 @@ const Body = ({ tagData, allPosts, selected }: Props) => {
   return (
     <main>
       <div className="w-full flex items-center justify-center">
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-6 items-center justify-center">
           <Tags tagData={tagData} />
           <div>
-            <section className="grid gap-4 grid-cols-2">
+            <div className="text-2xl font-bold leading-loose">
+              <p>Posts</p>
+            </div>
+            <section className="grid gap-2 grid-cols-4 relative">
               {allPosts.map((post) => {
                 return (
                   <PostCard

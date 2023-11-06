@@ -15,5 +15,6 @@ export default function Page({ params }: Props) {
     "tags",
     "createdAt",
   ]);
+
   return <Body tagData={tagData} allPosts={posts} selected={tag} />;
 }
