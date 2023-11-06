@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={suite.className}>
-        <div className="flex flex-col gap-8 bg-white dark:bg-slate-800">
+        <div className="flex flex-col gap-8 bg-white dark:bg-slate-800 transition duration-200">
           <Header />
           {children}
           <Footer />
