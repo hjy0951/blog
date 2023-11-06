@@ -26,10 +26,12 @@ const Post = async ({ slug, postData }: Props) => {
 
   return (
     <main className="flex flex-col items-center dark:text-white">
-      <div className="max-w-screen-md flex flex-col gap-10 items-center">
-        <div className={`${yeongdeokSea.className} flex flex-col gap-5 w-full`}>
+      <div className="max-w-screen-md flex flex-col gap-14 items-center">
+        <div
+          className={`${yeongdeokSea.className} flex flex-col gap-10 w-full`}
+        >
           <div className="flex justify-center">
-            <div className="text-3xl">{title}</div>
+            <p className="text-5xl">{title}</p>
           </div>
           <div className="flex flex-col items-end gap-2">
             {tags.map((tag: string, index: number) => (
