@@ -19,8 +19,10 @@ const Tags = ({ tagData, selected }: Props) => {
         href={`/${tagName === "all" ? "" : "tags/" + tagName}`}
         key={idx}
         className={`flex pl-3 pr-3 p-1.5 ${
-          selected === tagName ? "rounded-lg shadow-md bg-slate-200" : ""
-        }`}
+          selected === tagName
+            ? "rounded-lg shadow-md dark:shadow-gray-600 bg-slate-200 dark:bg-indigo-900"
+            : ""
+        } dark:text-white`}
       >
         <p className="underline-offset-4 hover:underline">
           {processedTagName[tagName]}
@@ -33,7 +35,7 @@ const Tags = ({ tagData, selected }: Props) => {
   return (
     <div className="w-full flex flex-col items-start">
       <div className="w-full flex gap-1 items-center justify-start text-2xl font-bold leading-loose">
-        <p>Tags</p>
+        <p className="dark:text-white">Tags</p>
       </div>
       <div className="pl-6 p-3 flex gap-0.5">
         {tagList.map((tag, idx) => createTag(tag, idx))}

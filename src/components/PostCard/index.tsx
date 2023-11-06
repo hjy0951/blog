@@ -22,8 +22,8 @@ const PostCard = ({ slug, title, description, tags, createdAt }: Props) => {
       onMouseLeave={() => setIsHover(false)}
     >
       <div
-        className={`p-6 w-80 flex flex-col rounded-md transition-transform transform-gpu hover:translate-y-[-15px] ${
-          isHover ? "shadow-lg" : ""
+        className={`p-6 w-80 flex flex-col rounded-md transition-transform transform-gpu dark:text-white hover:translate-y-[-15px] ${
+          isHover ? "shadow-lg shadow-slate-500" : ""
         }`}
       >
         <div className="w-full relative">
@@ -47,15 +47,17 @@ const PostCard = ({ slug, title, description, tags, createdAt }: Props) => {
           )}
         </div>
         <div className={`pt-4 w-full ${isHover ? "underline" : ""}`}>
-          <p className="whitespace-normal text-base">{title}</p>
+          <p className="whitespace-normal text-base ">{title}</p>
         </div>
         <div className="pt-3 w-full">
-          <p className="whitespace-normal text-xs text-slate-500">
+          <p className="whitespace-normal text-xs text-slate-500 dark:text-slate-400">
             {description}
           </p>
         </div>
         <div className="pt-3 flex justify-end font-xs">
-          <p className="text-xs text-slate-500">{createdAt}</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">
+            {createdAt}
+          </p>
         </div>
       </div>
     </a>

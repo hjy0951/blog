@@ -3,7 +3,10 @@ import ModeButton from "./ModeButton";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 w-full h-20 border-b flex justify-evenly items-center shadow z-10 bg-white">
+    <header
+      className="sticky top-0 w-full h-20 border-b flex justify-evenly items-center shadow z-10 bg-white
+    dark:bg-slate-800 dark:text-white"
+    >
       <div className={`${yeongdeokSea.className} w-32`}>
         <a href="/" className="hover:underline">
           <p>Heojoooon.</p>
@@ -15,9 +18,8 @@ const Header = () => {
       <div className="w-1/3 h-full" />
       <div className="flex w-1/5 justify-evenly">
         <a href="https://github.com/hjy0951">
-          {/* <p>GitHub</p> */}
           <svg
-            className="fill-gray-800 hover:fill-violet-950 hover:animate-bounce"
+            className="fill-gray-800 dark:fill-white hover:fill-violet-950 dark:hover:fill-violet-300 hover:animate-bounce"
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"
@@ -28,7 +30,7 @@ const Header = () => {
         </a>
         <a href="https://www.linkedin.com/in/%EC%A4%80%EC%98%81-%ED%97%88-159288250/">
           <svg
-            className="fill-gray-800 hover:fill-blue-800 hover:animate-bounce"
+            className="fill-gray-800 dark:fill-white hover:fill-blue-800 dark:hover:fill-blue-300 hover:animate-bounce"
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"
@@ -39,7 +41,7 @@ const Header = () => {
         </a>
         <a href="https://www.instagram.com/heojoooon/">
           <svg
-            className="fill-gray-800 hover:fill-pink-600 hover:animate-bounce"
+            className="fill-gray-800 dark:fill-white hover:fill-pink-600 dark:hover:fill-pink-300 hover:animate-bounce"
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"

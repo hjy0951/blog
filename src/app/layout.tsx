@@ -15,9 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko">
+    <html lang="ko" className="dark">
       <body className={suite.className}>
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 bg-white dark:bg-slate-800">
           <Header />
           {children}
           <Footer />

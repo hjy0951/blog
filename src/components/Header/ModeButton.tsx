@@ -6,7 +6,7 @@ const ModeButton = () => {
     alert("준비중입니다!");
   };
   return (
-    <button type="button" onClick={clickModeButton}>
+    <button className="dark:text-white" type="button" onClick={clickModeButton}>
       Mode
     </button>
   );

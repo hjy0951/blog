@@ -19,7 +19,7 @@ const Body = ({ tagData, allPosts, selected }: Props) => {
         <div className="flex flex-col gap-6 items-center justify-center">
           <Tags tagData={tagData} selected={selected} />
           <div>
-            <div className="text-2xl font-bold leading-loose">
+            <div className="text-2xl font-bold leading-loose dark:text-white">
               <p>Posts</p>
             </div>
             <section className="grid gap-2 grid-cols-4 relative">
