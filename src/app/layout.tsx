@@ -28,8 +28,10 @@ export default async function RootLayout({
 
   return (
     <html lang="ko" className={isDark ? "dark" : ""}>
-      <body className={suite.className}>
-        <div className="flex flex-col gap-8 bg-white dark:bg-slate-800 transition duration-200">
+      <body
+        className={`${suite.className} bg-white dark:bg-slate-800 transition duration-200`}
+      >
+        <div className="flex flex-col gap-8">
           <Header />
           {children}
           <Footer />
