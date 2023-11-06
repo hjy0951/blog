@@ -16,7 +16,7 @@ const Header = () => {
         </div> */}
       </div>
       <div className="w-1/3 h-full" />
-      <div className="flex w-1/5 justify-evenly">
+      <div className="flex w-1/6 justify-evenly" style={{ minWidth: "200px" }}>
         <a href="https://github.com/hjy0951">
           <svg
             className="fill-gray-800 dark:fill-white hover:fill-violet-950 dark:hover:fill-violet-300 hover:animate-bounce"
