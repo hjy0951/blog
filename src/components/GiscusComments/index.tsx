@@ -8,6 +8,7 @@ const Giscus = () => {
 
   useEffect(() => {
     if (!ref.current || ref.current.hasChildNodes()) return;
+    const isDark = document.querySelector("html")?.classList.contains("dark");
     const scriptElem = document.createElement("script");
     scriptElem.src = "https://giscus.app/client.js";
     scriptElem.async = true;
@@ -21,7 +22,10 @@ const Giscus = () => {
     scriptElem.setAttribute("data-reactions-enabled", "1");
     scriptElem.setAttribute("data-emit-metadata", "0");
     scriptElem.setAttribute("data-input-position", "bottom");
-    scriptElem.setAttribute("data-theme", theme);
+    scriptElem.setAttribute(
+      "data-theme",
+      isDark ? "preferred_color_scheme" : "light_tritanopia"
+    );
     scriptElem.setAttribute("data-lang", "ko");
     ref.current.appendChild(scriptElem);
   }, []);
